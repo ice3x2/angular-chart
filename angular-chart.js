@@ -1,4 +1,6 @@
-e strict';
+(function () {
+
+  'use strict';
 
   /* istanbul ignore next */
   var angular = window.angular ? window.angular : 'undefined' !== typeof require ? require('angular') : undefined;
@@ -791,21 +793,21 @@ e strict';
             (
 
               // not two prefixes
-            (!angular.isDefined(options.dimensions[formatKey].prefix) && !angular.isDefined(options.dimensions[key].prefix)) ||
+              (!angular.isDefined(options.dimensions[formatKey].prefix) && !angular.isDefined(options.dimensions[key].prefix)) ||
 
-              // two same prefixes
-            (angular.isDefined(options.dimensions[formatKey].prefix) &&
-            angular.isDefined(options.dimensions[key].prefix) &&
-            options.dimensions[formatKey].prefix === options.dimensions[key].prefix)
+                // two same prefixes
+              (angular.isDefined(options.dimensions[formatKey].prefix) &&
+              angular.isDefined(options.dimensions[key].prefix) &&
+              options.dimensions[formatKey].prefix === options.dimensions[key].prefix)
 
             ) && (
               // not two postfixes
-            (!angular.isDefined(options.dimensions[formatKey].postfix) && !angular.isDefined(options.dimensions[key].postfix)) ||
+              (!angular.isDefined(options.dimensions[formatKey].postfix) && !angular.isDefined(options.dimensions[key].postfix)) ||
 
-              // two same postfixes
-            (angular.isDefined(options.dimensions[formatKey].postfix) &&
-            angular.isDefined(options.dimensions[key].postfix) &&
-            options.dimensions[formatKey].postfix === options.dimensions[key].postfix)
+                // two same postfixes
+              (angular.isDefined(options.dimensions[formatKey].postfix) &&
+              angular.isDefined(options.dimensions[key].postfix) &&
+              options.dimensions[formatKey].postfix === options.dimensions[key].postfix)
 
             ))) {
             format = false;
@@ -815,7 +817,7 @@ e strict';
           configuration.axis[axis].tick.format = format;
         }
       });
-	
+
       if(!isUndefined(options.override)) {
         assignObject(configuration,options.override);
       }
@@ -975,7 +977,6 @@ e strict';
     .value('baseConfiguration', baseConfiguration);
 
 })();
-
 
 
 

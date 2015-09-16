@@ -1,4 +1,5 @@
-me": "angular-chart",
+{
+  "name": "angular-chart",
   "version": "0.3.2",
   "authors": [
     "Max Klenk <max@klenk.biz>"
