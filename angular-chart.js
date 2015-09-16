@@ -1,6 +1,4 @@
-(function () {
-
-  'use strict';
+e strict';
 
   /* istanbul ignore next */
   var angular = window.angular ? window.angular : 'undefined' !== typeof require ? require('angular') : undefined;
@@ -818,9 +816,38 @@
         }
       });
 	
-      if(options.override != undefined) {
-          _.assign(configuration,options.override); 
+      if(!isUndefined(options.override)) {
+        assignObject(configuration,options.override);
       }
+
+      function isObject(value) {
+        var type = typeof value;
+        return !!value && (type == 'object' || type == 'function');
+      }
+      function isUndefined(value) {
+        return value === undefined;
+      }
+
+      function isFunction(value) {
+        return isObject(value) && Object.prototype.toString.call(value) == '[object Function]';
+      }
+
+      function assignObject(objSrc, objDst) {
+        for (var keyDst in objDst) {
+          if(isUndefined[objSrc[keyDst]] || isFunction(objDst[keyDst])) {
+            objSrc[keyDst] = objDst[keyDst]
+          } else if(isObject(objSrc[keyDst])) {
+            assignObject(objSrc[keyDst], objDst[keyDst]);
+          } else {
+            objSrc[keyDst] = objDst[keyDst];
+          }
+        }
+        return objSrc;
+      }
+
+
+
+
 
 
     }
@@ -948,6 +975,7 @@
     .value('baseConfiguration', baseConfiguration);
 
 })();
+
 
 
 
