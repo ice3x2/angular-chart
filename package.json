@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/grafiddle/angular-chart.git"
+    "url": "git://github.com/ice3x2/angular-chart.git"
   },
   "keywords": [
     "d3",
