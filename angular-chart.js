@@ -817,6 +817,11 @@
           configuration.axis[axis].tick.format = format;
         }
       });
+	
+      if(options.override != undefined) {
+          _.assign(configuration,options.override); 
+      }
+
 
     }
 
